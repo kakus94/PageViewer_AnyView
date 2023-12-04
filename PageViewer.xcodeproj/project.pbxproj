@@ -376,9 +376,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PageViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = ABMDN66EFH;
+				DEVELOPMENT_TEAM = HNSKUL3WR3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PageViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,9 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PageViewer/Preview Content\"";
-				DEVELOPMENT_TEAM = ABMDN66EFH;
+				DEVELOPMENT_TEAM = HNSKUL3WR3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PageViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

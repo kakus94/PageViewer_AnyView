@@ -9,15 +9,16 @@
 import SwiftUI
 
 struct PageViewData: Identifiable {
-    let id: String = UUID().uuidString
-    let imageNamed: String
+  let id: String = UUID().uuidString
+  let view: (any View)
 }
 
 struct PageView: View {
+  
     let viewData: PageViewData
+  
     var body: some View {
-        Image(viewData.imageNamed)
-            .resizable()
-            .clipped()
+      AnyView(viewData.view)
+        .clipped()
     }
 }

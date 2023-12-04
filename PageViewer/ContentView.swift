@@ -9,11 +9,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    let pages: [PageViewData] = [
-        PageViewData(imageNamed: "image1"),
-        PageViewData(imageNamed: "image2"),
-        PageViewData(imageNamed: "image3")
-    ]
+  
+  let pages: [PageViewData] = [
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable())),
+    PageViewData(view: TestView(view: Image("image4").resizable()))
+  ]
+  
     @State private var index: Int = 0
     
     var body: some View {
@@ -31,4 +48,36 @@ struct ContentView: View {
             .padding(.bottom, 12)
         }
     }
+}
+
+
+fileprivate struct TestView: View {
+  
+  var view: any View
+  @State var x: CGFloat?
+  
+  var body: some View {
+    AnyView(view)
+      .gesture(
+        SequenceGesture(
+          LongPressGesture(),
+          DragGesture()
+            .onChanged({ value in
+              print(value.location)
+              self.x = value.location.x
+            })
+            .onEnded({ value in
+              self.x = nil
+            })
+        )
+      )
+      .overlay {
+        if let x {
+          Rectangle()
+            .frame(width: 2)
+            .frame(maxHeight: .infinity)
+            .position(x: x, y: UIScreen.main.bounds.height / 2 )
+        }
+      }
+  }
 }
